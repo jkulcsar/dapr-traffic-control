@@ -94,7 +94,7 @@ public class TrafficController : ControllerBase
                 };
 
                 // publish speedingviolation (Dapr publish / subscribe)
-                await daprClient.PublishEventAsync("pubsub", "speedingviolations", speedingViolation);
+                await daprClient.PublishEventAsync("pubsub.mm", "speedingviolations", speedingViolation);
             }
 
             return Ok();

@@ -40,7 +40,7 @@ public class CollectionController : ControllerBase
         }
     }
 
-    [Topic("pubsub", "speedingviolations", "deadletters", false)]
+    [Topic("pubsub.mm", "speedingviolations", "deadletters", false)]
     [Route("collectfine")]
     [HttpPost()]
     public async Task<ActionResult> CollectFine(SpeedingViolation speedingViolation, [FromServices] DaprClient daprClient)
@@ -72,7 +72,7 @@ public class CollectionController : ControllerBase
         return Ok();
     }
 
-    [Topic("pubsub", "deadletters")]
+    [Topic("pubsub.mm", "deadletters")]
     [Route("deadletters")]
     [HttpPost()]
     public ActionResult HandleDeadLetter(object message)

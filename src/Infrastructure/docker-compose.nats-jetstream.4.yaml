@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  nats1:
+    image: nats:latest
+    command: [ "-js" ]
+    ports:
+      - 4222:4222 # Client connections
+      - 8222:8222 # Monitoring
+      - 6222:6222 # Route connections
+      - 7777:7777 # Metrics
+    networks:
+      - nats
+
+  nats2:
+    image: nats:latest
+    command: [ "-js" ]
+    ports:
+      - 5222:4222 # Client connections
+      - 9222:8222 # Monitoring
+      - 7222:6222 # Route connections
+      - 8777:7777 # Metrics
+    networks:
+      - nats
+
+  nats3:
+    image: nats:latest
+    command: [ "-js" ]
+    ports:
+      - 6222:4222 # Client connections
+      - 10222:8222 # Monitoring
+      - 8222:6222 # Route connections
+      - 9777:7777 # Metrics
+    networks:
+      - nats
+
+networks:
+  nats:

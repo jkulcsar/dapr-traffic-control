@@ -9,10 +9,10 @@ spec:
   metadata:
   - name: natsURL
     value: nats://localhost:4222 # Required
+  - name: name
+    value: "my-conn-name"
   - name: streamName
-    value: "traffic-control-stream"
-  - name: subject
-    value: "*"  # Replace with your subject
+    value: "my-stream"
 scopes:
   - trafficcontrolservice
   - finecollectionservice

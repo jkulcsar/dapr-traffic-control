@@ -1,0 +1,87 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  finecollectionservice:
+    build:
+      context: "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src"
+      dockerfile: "FineCollectionService/Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/FineCollectionService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+    image: "finecollectionservice:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\janos\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src\\FineCollectionService:/app:rw"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control:/src:rw"
+    working_dir: "/app"
+  simulation:
+    build:
+      context: "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src"
+      dockerfile: "Simulation/Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/Simulation.dll"
+    environment:
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+    image: "simulation:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\janos\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src\\Simulation:/app:rw"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control:/src:rw"
+    working_dir: "/app"
+  trafficcontrolservice:
+    build:
+      context: "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src"
+      dockerfile: "TrafficControlService/Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/TrafficControlService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+    image: "trafficcontrolservice:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\janos\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src\\TrafficControlService:/app:rw"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control:/src:rw"
+    working_dir: "/app"
+  vehicleregistrationservice:
+    build:
+      context: "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src"
+      dockerfile: "VehicleRegistrationService/Dockerfile"
+      target: "build-env"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/VehicleRegistrationService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\janos\\.nuget\\packages"
+    image: "vehicleregistrationservice:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\janos\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control\\src\\VehicleRegistrationService:/app:rw"
+    - "C:\\Users\\janos\\source\\repos\\dapr\\dapr-traffic-control:/src:rw"
+    working_dir: "/app"
